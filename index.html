@@ -15,17 +15,18 @@
 
     <!-- Zawartość -->
     <div class="z-10">
-      <!-- Możesz tutaj dodać swoje logo, np. <img src="twoje-logo.png"> -->
+      <!-- Tu możesz wstawić swoje logo -->
+      <!-- <img src="twoje-logo.png" alt="Logo" class="mx-auto mb-6 w-40 sm:w-64" /> -->
 
       <h1 class="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-fuchsia-500 via-pink-400 to-purple-500 bg-clip-text text-transparent">
-        Najlepszy serwer Minecraft BoxPvP kilofmc!
+        Najlepszy serwer Minecraft BoxPvP
       </h1>
 
       <p class="mt-6 max-w-xl mx-auto text-lg text-gray-300">
         Dołącz do nas już teraz! Gracze, skrzynki, bossy i ekonomia – wszystko na jednym serwerze!
       </p>
 
-      <!-- Przycisk Discord / ItemShop / Kopiuj IP -->
+      <!-- Przyciski -->
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a href="https://discord.gg/QQyRcn85nk" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full transition duration-300">
           Dołącz na Discord
@@ -38,7 +39,8 @@
         </button>
       </div>
 
-      <!-- Info o skopiowaniu -->
+      <!-- Ukryte pole do kopiowania IP -->
+      <input type="text" id="server-ip" value="kilofmc.pl" readonly class="opacity-0 absolute left-[-9999px]" />
       <p id="ip-status" class="mt-2 text-green-400"></p>
     </div>
   </header>
@@ -56,14 +58,15 @@
     © 2025 KilofMC. Wszystkie prawa zastrzeżone.
   </footer>
 
+  <!-- Skrypt kopiowania IP -->
   <script>
     function copyIP() {
-      const ip = "kilofmc.pl";
-      navigator.clipboard.writeText(ip).then(() => {
-        document.getElementById("ip-status").textContent = "IP skopiowane do schowka!";
-      }).catch(() => {
-        document.getElementById("ip-status").textContent = "Nie udało się skopiować IP.";
-      });
+      const ipInput = document.getElementById("server-ip");
+      ipInput.select();
+      ipInput.setSelectionRange(0, 99999); // dla urządzeń mobilnych
+      document.execCommand("copy");
+
+      document.getElementById("ip-status").textContent = "IP skopiowane do schowka!";
     }
   </script>
 
