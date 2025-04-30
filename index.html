@@ -69,7 +69,7 @@
 
     async function getPlayerCount() {
       try {
-        const response = await fetch("https://api.mcsrvstat.us/2/kilofmc.pl");
+        const response = await fetch("https://api.mcstatus.io/v2/status/java/kilofmc.pl");
         const data = await response.json();
         if (data && data.players && data.players.online !== undefined) {
           document.getElementById("playercount").textContent = `Graczy online: ${data.players.online}`;
