@@ -34,6 +34,22 @@
             text-align: center;
             padding: 10px;
         }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            margin: 10px 0;
+            display: inline-block;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .copy-ip {
+            background-color: #008CBA;
+        }
     </style>
 </head>
 <body>
@@ -50,14 +66,33 @@
 </section>
 
 <section>
-    <h2>Dołącz do gry</h2>
-    <p>Skorzystaj z poniższego przycisku, aby dołączyć do serwera.</p>
-    <a href="link-do-serwera" style="background-color: #4CAF50; color: white; padding: 15px 20px; text-decoration: none;">Dołącz teraz</a>
+    <h2>Dołącz do nas!</h2>
+    <p>Skorzystaj z poniższych przycisków, aby dołączyć do naszej społeczności:</p>
+    <!-- Przycisk do Discorda -->
+    <a href="https://discord.gg/QQyRcn85nk" class="button" target="_blank">Dołącz do Discorda</a>
+    
+    <!-- Przycisk do itemshopu -->
+    <a href="https://vishop.pl/shop/20371/server/19176" class="button" target="_blank">Przejdź do Itemshopu</a>
+    
+    <!-- Przycisk do kopiowania IP -->
+    <button onclick="copyIP()" class="button copy-ip">Skopiuj IP: kilofmc.pl</button>
+    <p id="ip-status"></p>
 </section>
 
 <footer>
     <p>© 2025 KilofMC. Wszystkie prawa zastrzeżone.</p>
 </footer>
+
+<script>
+    function copyIP() {
+        var ip = "kilofmc.pl";
+        navigator.clipboard.writeText(ip).then(function() {
+            document.getElementById("ip-status").textContent = "IP skopiowane do schowka!";
+        }).catch(function(err) {
+            document.getElementById("ip-status").textContent = "Błąd podczas kopiowania IP.";
+        });
+    }
+</script>
 
 </body>
 </html>
