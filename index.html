@@ -3,90 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KilofMC - Strona główna</title>
+    <title>KilofMC - Oficjalna Strona</title>
     <style>
-        /* Podstawowe style */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #141414;
             color: #fff;
         }
+
         header {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 20px;
+            background-color: #0f0f0f;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 40px;
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
+
+        /* Tło strony */
         .hero-image {
             width: 100%;
-            height: 600px;
-            background-image: url('https://example.com/obrazek.jpg'); /* Wstaw tutaj odpowiedni obrazek tła */
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1600295624347-c4d0b35e7ff6'); /* Wstaw tutaj estetyczny obrazek */
             background-size: cover;
             background-position: center;
-            filter: brightness(50%);
+            filter: brightness(60%);
         }
+
         .container {
             width: 90%;
             margin: 0 auto;
-        }
-        section {
             padding: 40px 0;
         }
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
+
+        h2 {
+            font-size: 2em;
+            color: #fff;
             text-align: center;
-            padding: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
-        /* Przyciski */
+
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
         .button {
-            background-color: #4CAF50;
+            background-color: #007bff;
             color: white;
-            padding: 15px 20px;
+            padding: 15px 30px;
             text-decoration: none;
-            margin: 10px 0;
+            margin: 15px 0;
             display: inline-block;
             text-align: center;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
         }
+
         .button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
-        .copy-ip {
-            background-color: #008CBA;
-        }
+
         .boxpvp-section {
-            background-color: #2c3e50;
-            padding: 50px;
+            background-color: #222;
             border-radius: 10px;
-            margin-top: 40px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
+
         .boxpvp-section h2 {
+            font-size: 2.5em;
             text-align: center;
-            font-size: 36px;
+            color: #ffd700;
         }
+
         .boxpvp-section p {
-            font-size: 18px;
+            font-size: 1.2em;
+            color: #ccc;
             text-align: center;
-            margin-top: 20px;
         }
-        /* Efekt przewijania */
-        .scrollable {
-            max-height: 500px;
-            overflow-y: auto;
+
+        .footer {
+            background-color: #0f0f0f;
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            font-size: 1em;
+        }
+
+        .copy-ip {
+            background-color: #28a745;
+        }
+
+        .copy-ip:hover {
+            background-color: #218838;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2em;
+            }
+            .button {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>KilofMC - Oficjalna Strona</h1>
+    KilofMC - Oficjalna Strona
 </header>
 
 <div class="hero-image"></div>
@@ -95,39 +132,37 @@
 
     <section>
         <h2>O serwerze</h2>
-        <p>Witaj na serwerze Minecraft KilofMC! Znajdziesz tu niesamowite przygody i wspaniałą społeczność. Dołącz do nas i baw się dobrze!</p>
+        <p>Witaj na serwerze Minecraft KilofMC! Dołącz do naszej społeczności, weź udział w ekscytujących przygodach i graj na jednym z najlepszych serwerów Minecraft w Polsce!</p>
     </section>
 
     <section>
         <h2>Dołącz do nas!</h2>
         <p>Skorzystaj z poniższych przycisków, aby dołączyć do naszej społeczności:</p>
+        
         <!-- Przycisk do Discorda -->
         <a href="https://discord.gg/QQyRcn85nk" class="button" target="_blank">Dołącz do Discorda</a>
-
+        
         <!-- Przycisk do itemshopu -->
         <a href="https://vishop.pl/shop/20371/server/19176" class="button" target="_blank">Przejdź do Itemshopu</a>
-
+        
         <!-- Przycisk do kopiowania IP -->
         <button onclick="copyIP()" class="button copy-ip">Skopiuj IP: kilofmc.pl</button>
         <p id="ip-status"></p>
     </section>
 
-    <!-- Sekcja o BoxPvP -->
+    <!-- Sekcja BoxPvP -->
     <section class="boxpvp-section">
-        <h2>Najlepszy serwer BoxPvP!</h2>
-        <div class="scrollable">
-            <p>BoxPvP to jeden z najbardziej ekscytujących trybów na naszym serwerze. Znajdziesz tu intensywne walki PvP w różnych arenach. Dołącz do gry i pokaż, kto jest najlepszy!</p>
-        </div>
+        <h2>Najlepszy serwer BoxPvP</h2>
+        <p>BoxPvP to dynamiczny tryb gry, który oferuje niezliczone godziny intensywnych walk! Walcz z innymi graczami na specjalnych arenach i udowodnij, kto jest najlepszym wojownikiem na serwerze!</p>
     </section>
 
 </div>
 
-<footer>
+<div class="footer">
     <p>© 2025 KilofMC. Wszystkie prawa zastrzeżone.</p>
-</footer>
+</div>
 
 <script>
-    // Funkcja do kopiowania IP
     function copyIP() {
         var ip = "kilofmc.pl";
         navigator.clipboard.writeText(ip).then(function() {
